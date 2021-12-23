@@ -112,8 +112,6 @@ async function makeComptroller(opts = {}) {
     await send(unitroller, 'setXVSAddress', [xvs._address]); // harness only
     await send(vaiunitroller, 'setVAIAddress', [vai._address]); // harness only
     await send(unitroller, 'harnessSetVenusRate', [venusRate]);
-    await send(unitroller, '_setVenusVAIRate', [venusVAIRate]);
-    await send(vaiunitroller, '_initializeVenusVAIState', [0]);
     await send(vaiunitroller, 'initialize');
     await send(vai, 'rely', [vaiunitroller._address]);
 
